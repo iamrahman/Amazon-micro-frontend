@@ -12,23 +12,29 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-
+import history from '../utils/history';
 const pages = ['Home', 'Amazon Shop', 'Amazon Pay'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const handleCloseNavMenu = (event) => {
+    const textContent = event?.target?.textContent;
+    if(textContent === "Amazon Shop"){
+      history.push("/amazon-shop");
+    }else if(textContent === "Amazon Pay"){
+      history.push("/amazon-pay");
+    } else {
+      history.push("/");
+      setAnchorElNav(null);
+    }
   };
 
   const handleCloseUserMenu = () => {

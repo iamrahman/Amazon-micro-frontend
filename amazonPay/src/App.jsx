@@ -1,14 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import AmazonPayContent from "./AmazonPayContent";
 import "./index.css";
-
-const App = () => (
-  <div className="container">
-    <div>Name: amazonPay</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
-);
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<AmazonPayContent />, document.getElementById("app"));

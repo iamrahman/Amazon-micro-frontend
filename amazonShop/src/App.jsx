@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import Header from "container/Header";
 import "./index.css";
 
 const App = () => (
   <div className="container">
+    <Header/>
     <div>Name: amazonShop</div>
     <div>Framework: react</div>
     <div>Language: JavaScript</div>

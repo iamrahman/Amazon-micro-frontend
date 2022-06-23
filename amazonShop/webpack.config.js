@@ -43,8 +43,12 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "amazonShop",
       filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {},
+      remotes: {
+        container: "container@http://localhost:8080/remoteEntry.js",
+      },
+      exposes: {
+        "./amazonShopApp": "./src/index.js"
+      },
       shared: {
         ...deps,
         react: {
